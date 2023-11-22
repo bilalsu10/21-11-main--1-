@@ -70,6 +70,10 @@ public class WeatherController {
     public String bookmark() {
         return "bookmark";
     }
+    @GetMapping("/bookmark/search")
+    public String search() {
+        return "weather_search";
+    }
 
     @GetMapping("/login/weather")
     public String loginSuccess(

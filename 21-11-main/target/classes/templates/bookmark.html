@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" th:href="@{/css/bookmark.css}">
+    
     <title>bookmark</title>
-    <script>
-    function updateWeatherOnBookmark(weatherData) {
-    $('#city').text(weatherData.location.city);
-    $('.temperature').text(weatherData.current.temp);
-    }
-
-    </script>
 </head>
 <body>
-<div class="gird">
+    
 
+   
+
+
+<div class="gird">
+    
+    
     <div class="con">
         <div class="back">
             <div class="back-icon">
-               <a href="#" class="bicon"><ion-icon name="chevron-back-outline" ></ion-icon></a> 
+               <a href="/login/weather" class="bicon"><ion-icon name="chevron-back-outline" ></ion-icon></a> 
             </div>
-             <h2 class="title">Weather</h2>  
+             <h2 class="title">Weather</h2>
         </div>
+
 
         <div class="searchBox">
             <div class="search">
-                <a href="#" class="icon"><ion-icon name="search-outline" ></ion-icon></a>
+                <a href="/bookmark/search" class="icon"><ion-icon name="search-outline" ></ion-icon></a>
             </div>
             
         </div>
@@ -45,18 +47,57 @@
         <div class="fv-card">
             <div class = "detail-head">
                 <h1 class="my">My Location</h1>
-                <p id="city" th:text="${location != null ? location.city : 'Default City'}">Default City</p>
+                <p>Chiang Rai</p>
             </div>
-            <div class="temp" ><span class="temperature" th:text="${weather.current.temp}">0</span><span class="degree-celsius">°C</span></div>
+            <div class="temp">28&#176</div>
         </div>
         <div class="fv-card-tail">
             <div class = "detail-tail">
+                <h1>⚠</h1>
+                <h2>Heavy Rain Warning</h2> 
+            </div>
+            <div class="temp-hl">H:28&#176 L:20&#176</div>
+            
+        </div>
+    </div>
+    
+    <div class="fv-con">
+        <div class="fv-card">
+            <div class = "detail-head">
+                <h1 class="my">Mae fah Luang</h1>
+                <p>10.00 AM</p>
+            </div>
+            <div class="temp">18&#176</div>
+        </div>
+        <div class="fv-card-tail">
+            <div class = "detail-tail">
+                <h1>⚠</h1>
+                <h2>Heavy Rain Warning</h2> 
             </div>
             <div class="temp-hl">H:28&#176 L:20&#176</div>
             
         </div>
     </div>
 
+    <div class="fv-con">
+        <div class="fv-card">
+            <div class = "detail-head">
+                <h1 class="my">Bankok</h1>
+                <p>10.00 AM</p>
+            </div>
+            <div class="temp">29&#176</div>
+        </div>
+        <div class="fv-card-tail">
+            <div class = "detail-tail">
+                <h1>⚠</h1>
+                <h2>Heavy Rain Warning</h2> 
+            </div>
+            <div class="temp-hl">H:28&#176 L:20&#176</div>
+            
+        </div>
+    </div>
+
+    
 </div>
 </body>
 </html>
