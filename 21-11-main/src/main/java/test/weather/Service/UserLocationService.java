@@ -15,11 +15,17 @@ public class UserLocationService {
     private UserLocationRepository userLocationRepository;
 
     public void saveUserLocation(double latitude, double longitude, String userId) {
-        Location userLocation = new Location();
-        userLocation.setLatitude(latitude);
-        userLocation.setLongitude(longitude);
-        userLocation.setId(userId);
-        userLocationRepository.save(userLocation);
+        try {
+            Location userLocation = new Location();
+            userLocation.setLatitude(latitude);
+            userLocation.setLongitude(longitude);
+            userLocation.setId(userId); // Ensure this is compatible with the database schema
+            userLocationRepository.save(userLocation);
+        } catch (Exception e) {
+            // Log the exception, e.g., using a logger or System.err
+            System.err.println("Error saving user location: " + e.getMessage());
+            // Handle the exception as appropriate for your application
+        }
     }
 }
 

@@ -12,7 +12,6 @@ import test.weather.Security.User;
 @Entity
 public class Location {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // This will auto-generate unique IDs for each location
     private String id; // Unique identifier for each location
 
     @ManyToOne
